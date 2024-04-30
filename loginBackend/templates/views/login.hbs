@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="/css/login.css">
+
+</head>
+<body>
+  <div class="main">
+    <span class="close-btn" onclick="redirectToMainPage()">&times;</span>
+    <input type="checkbox" id="chk" aria-hidden="true">
+    <div class="signup">
+      <form action="/signup" method="POST">
+        <label for="chk" aria-hidden="true">Sign up</label>
+        <input type="text" name="name" placeholder="User name" required="">
+        <input type="email" name="email" placeholder="Email" required="">
+        <input type="password" name="password" placeholder="Password" required="">
+        <button class="signupbtn">Sign up</button>
+      </form>
+    </div>
+    <div class="login">
+      <form form action="/login" method="POST">
+        <label for="chk" aria-hidden="true">Login</label>
+        <input type="email" name="email" placeholder="Email" required="">
+        <input type="password" name="password" placeholder="Password" required="">
+        <button class="loginbtn">Login</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    function redirectToMainPage() {
+      window.location.href = '/';
+    }
+</script>
+<script>
+  fetch('/signup', {
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+.then(response => {
+  if (!response.ok) {
+    return response.json().then(data => {
+      alert(data.error);
+    });
+  } else {
+    // Handle success
+    window.location.href = "/"; // Redirect to home page or wherever you want
+  }
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+
+</script>
+
+</body>
+</html>
