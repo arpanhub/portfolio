@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Box</title>
+    <link rel="stylesheet" href="/css/livechat.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link rel="stylesheet" href="/css/index.css">
+    {{!-- <link rel="stylesheet" href="styles.css"> --}}
+</head>
+<body>
+    <nav id="desktop-nav  ">
+    <a data-aos="slide-up" href="/" class="logo">Arpan Gupta</a>
+    <div>
+        <ul class="nav-links">
+            <li data-aos="fade-down"><a href="#about">About</a></li>
+            <li data-aos="fade-up"><a href="#experience">Experience</a></li>
+            <li data-aos="fade-down"><a href="#projects">Projects</a></li>
+            <li data-aos="fade-up"><a href="#contact">Contact</a></li>
+            <li data-aos="fade-down"><a href="/login">Login</a></li>
+            <li data-aos="fade-up"><a href="/chat" id="chat-toggle">Chat</a></li>
+        </ul>
+    </div>
+</nav>
+    <nav id="hamburger-nav">
+    <div class="logo">Arpan Gupta</div>
+    <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li><a href="loginpopup.html" onclick="toggleLoginForm()">Login</a></li>
+            <li><a href="" id="chat-toggle" onclick="toggleChat()">Chat with me</a></li>
+        </div>
+    </div>
+</nav>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chat Box</h2>
+        </div>
+        <div class="chat-body">
+            <div class="messages"></div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Type your message..." class="message-input">
+            <button class="send-button">Send</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+   {{!--  <div class="app">
+        <div class="screen-join active">
+            <div class="form">
+                <h2>Join Chatroom</h2>
+                <div class="form-input">
+                    <label>Username</label>
+                    <input type="text" id="username">
+                </div>
+                <div class="form-input">
+                    <button id="join-user">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="screen chat-screen">
+                <div class="header">
+                    <div class="logo">Chatroom</div>
+                    <button id="exit-chat">Exit</button>
+                </div>
+                <div class="messages">
+                    {{!-- dummy messages --}}
+                    <div class="messages my-messages">
+                        <div>
+                            <div class="name">You</div>
+                            <div class="text">Hi</div>
+                        </div>
+                    </div>
+                    <div class="update">
+                        Abc is Joined the conversation
+                    </div>
+                    <div class="messages other-messages">
+                        <div>
+                            <div class="name">You</div>
+                            <div class="text">Hi</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="typebox">
+                    <input type="text" id="messages-input">
+                    <button class="sendm-essages">Send</button>
+                </div>
+        </div>
+    </div>
+     --}}
+</body>
+</html>

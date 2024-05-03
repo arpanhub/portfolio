@@ -12,7 +12,7 @@ body {
       background-size: cover;
       overflow: hidden;
       animation: fadeIn 1s ease-in-out forwards;
-      animation-delay: 1s;
+      /* animation-delay: 1s; */
     }
 
     @keyframes fadeIn {
@@ -105,7 +105,7 @@ body {
       height: 460px;
       background: #eee;
       border-radius: 60% / 10%;
-      transform: translateY(-180px);
+      transform: translateY(-500px);
       transition: 0.8s ease-in-out;
     }
 
@@ -115,7 +115,7 @@ body {
     }
 
     #chk:checked ~ .login {
-      transform: translateY(-500px);
+      transform: translateY(-180px);
     }
 
     #chk:checked ~ .login label {
@@ -123,7 +123,7 @@ body {
     }
 
     #chk:checked ~ .signup label {
-      transform: scale(0.6);
+      transform: scale(0.4);
     }
 
     .close-btn {

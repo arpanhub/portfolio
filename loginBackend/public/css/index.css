@@ -31,7 +31,7 @@ nav{
 .nav-links{
     list-style: none;
     gap: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 a{
     color: black;
@@ -46,7 +46,7 @@ a:hover{
     text-decoration-color: rgb(181,181,181);
 }
 .logo{
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 .logo:hover {
     cursor: default;

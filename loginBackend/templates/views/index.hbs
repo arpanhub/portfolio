@@ -4,62 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/mediaqueries.css">
 </head>
 <body>
-    <nav id="desktop-nav">
-      <a href="/" class="logo">Arpan Gupta</a>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="/login">Login</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav id="desktop-nav  ">
+    <a data-aos="slide-up" href="/" class="logo">Arpan Gupta</a>
+      <div>
+          <ul class="nav-links">
+              <li data-aos="fade-down"><a href="#about">About</a></li>
+              <li data-aos="fade-up"><a href="#experience">Experience</a></li>
+              <li data-aos="fade-down"><a href="#projects">Projects</a></li>
+              <li data-aos="fade-up"><a href="#contact">Contact</a></li>
+              {{#if data}}
+              <li data-aos="fade-down"><a href="/logout">Logout</a></li>
+              <li data-aos="fade-down">HI!   {{data}} </li>
+               {{else}}
+              <li data-aos="fade-down"><a href="/login">Login</a></li>
+              {{/if}}
+              {{!-- <li data-aos="fade-up"><a href="/chat" id="chat-toggle">Chat</a></li> --}}
+          </ul>
+      </div>
+  </nav>
     <nav id="hamburger-nav">
-        <div class="logo">Arpan Gupta</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-                <li><a href="loginpopup.html" onclick="toggleLoginForm()">Login</a></li>
-            </div>
+    <div class="logo">Arpan Gupta</div>
+    <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </nav>
+        <div class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            {{#if data}}
+                <li data-aos="fade-down"><a href="/logout">Logout</a></li>
+            {{else}}
+                <li data-aos="fade-down"><a href="/login">Login</a></li>
+            {{/if}}
+            <li><a href="" id="chat-toggle" onclick="toggleChat()">Chat</a></li>
+        </div>
+    </div>
+</nav>
     <section id="profile">
-    <div class="section__pic-container">
+    <div  class="section__pic-container">
         <img src="/assets/arpan-profile-pic.jpg" alt="Arpan Gupta profile picture" class="rounded-img" />
     </div>
     <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Arpan Gupta</h1>
+        <p  data-aos="slide-down
+" class="section__text__p1">Hello, I'm</p>
+        <h1 data-aos="slide-down
+"  class="title">Arpan Gupta</h1>
         <p class="section__text__p2">Devloper-Programmer-Editor</p>
         <div class="btn1-container">
-            <button class="btn btn-color-2" onclick="window.open()">Download CV</button>
-            <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact   </button>
-        </div>
-        <div id="socials-container">
-            <img src="/assets/linkedin.png" alt="My linkedin Profile" class="icon" onclick="location.href='https://www.linkedin.com/in/arpan-gupta-/'">
+    <button class="btn btn-color-2" onclick="window.open('./assets/DreamCXV(1).pdf')">Download CV</button>
+    <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact</button>
+</div>
+
+        <div data-aos="slide-down
+"id="socials-container">
+            <img src="/assets/linkedin.png" alt="My linkedin Profile" class="icon" onclick="location.href='https://www.linkedin.com/in/arpan-gupta/'">
             <img src="/assets/github.png" alt="My github Profile" class="icon" onclick="location.href='https://github.com/arpanhub'">
         </div>
     </div>
 </section>
-    <section id="about">
-        <p class="section__text__p1">Get To Know More</p>
+    <section  id="about">
+        <p  data-aos="fade-in
+"class="section__text__p1">Get To Know More</p>
         <h1 class="title">About Me</h1>
         <div class="section-container">
-            <div class="about-details-container">
+            <div  data-aos="fade-left" class="about-details-container">
                 <div class="about-containers">
                     <div class="details-container">
                         <img src="./assets/experience.png"
@@ -69,7 +86,7 @@
                          <h3>Experience</h3>
                          <p>1+ years<br />Web dev</p>
                     </div>
-                    <div class="details-container">
+                    <div data-aos="fade-right" class="details-container">
                         <img src="./assets/education.png"
                          alt="Experience icon"
                          class="icon"
@@ -99,13 +116,13 @@
       />          
     </section>
     <section id="experience">
-        <p class="section__text__p1">Explore My</p>
+        <p  data-aos="slide-up"class="section__text__p1">Explore My</p>
         <h1 class="title">Experience</h1>
         <div class="experience-details-container">
-          <div class="about-containers">
-            <div class="details-container">
+          <div  data-aos="slide-up" class="about-containers">
+            <div data-aos="fade-right" class="details-container">
               <h2 class="experience-sub-title">Frontend Development</h2>
-              <div class="article-container">
+              <div data-aos="slide-down" class="article-container">
                 <article>
                   <img
                     src="./assets/checkmark.png"
@@ -174,9 +191,9 @@
                 </article>
               </div>
             </div>
-            <div class="details-container">
+            <div data-aos="fade-left" class="details-container">
               <h2 class="experience-sub-title">Backend Dev</h2>
-              <div class="article-container">
+              <div data-aos="slide-down" class="article-container">
                 <article>
                   <img
                     src="./assets/checkmark.png"
@@ -237,9 +254,9 @@
     <section id="projects">
         <p class="section__text__p1">Browse My Recent</p>
         <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-          <div class="about-containers">
-            <div class="details-container color-container">
+        <div  class="experience-details-container">
+          <div  class="about-containers">
+            <div data-aos="slide-right" class="details-container color-container">
               <div class="article-container">
                 <img
                   src="./assets/project-1 (2).png"
@@ -263,8 +280,8 @@
                 </button>
               </div>
             </div>
-            <div class="details-container color-container">
-              <div class="article-container">
+            <div data-aos="slide-up" class="details-container color-container">
+              <div  class="article-container">
                 <img
                   src="./assets/project-2 (2).png"
                   alt="Project 2"
@@ -287,7 +304,7 @@
                 </button>
               </div>
             </div>
-            <div class="details-container color-container">
+            <div data-aos="slide-left" class="details-container color-container">
               <div class="article-container">
                 <img
                   src="./assets/project-3 (2).png"
@@ -323,7 +340,7 @@
       <section id="contact">
         <p class="section__text__p1">Get in Touch</p>
         <h1 class="title">Have Project In Mind? </h1><br>
-        <form action="/send_email" method="post" class="contact-form" id="contactForm">
+        <form data-aos="spin-right" action="/send_email" method="post" class="contact-form" id="contactForm">
           <div class="contact-info-container">
             <img
               src="./assets/person.png"
@@ -360,39 +377,93 @@
         <nav>
           <div class="nav-links-container">
             <ul class="nav-links">
-              <li><a href="#about">About</a></li>
-              <li><a href="#experience">Experience</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
+               <li data-aos="fade-down"><a href="#about">About</a></li>
+            <li data-aos="fade-up"><a href="#experience">Experience</a></li>
+            <li data-aos="fade-down"><a href="#projects">Projects</a></li>
+            <li data-aos="fade-up"><a href="#contact">Contact</a></li>
+            <li data-aos="fade-down"><a href="/login">Login</a></li>
+            <li data-aos="fade-up"><a href="" id="chat-toggle">Chat</a></li>
             </ul>
           </div>
         </nav>
         <p>Copyright &#169; 2024 Arpan Gupta. All Rights Reserved.</p>
       </footer>
+    <div id="chat-modal" class="chat-modal">
+        <div class="chat-modal-content">
+            <div class="chat-header">
+                <span class="close-btn">&times;</span>
+                <h2>Chat with Me</h2>
+            </div>
+            <div class="chat-body">
+                <div class="messages"></div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Type your message..." class="message-input">
+                <button class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
     <script>
       // script.js
-function toggleMenu() {
-  const menu = document.querySelector(".menu-links");
-  const icon = document.querySelector(".hamburger-icon");
-  menu.classList.toggle("open");
-  icon.classList.toggle("open");
-}
+    function toggleMenu() {
+      const menu = document.querySelector(".menu-links");
+      const icon = document.querySelector(".hamburger-icon");
+      menu.classList.toggle("open");
+      icon.classList.toggle("open");
+    }
 
 // pop up after the mail has been sent
-document.getElementById('contactForm').addEventListener('submit', async function(event) {
-  event.preventDefault();
-  const formData = new FormData(this);
-  const response = await fetch('/send_email', {
-    method: 'POST',
-    body: formData
+{{!-- document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('contactForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    try {
+      const response = await fetch('/send_email', {
+        method: 'POST',
+        body: formData
+      });
+      if (!response.ok) {
+        throw new Error('Failed to send email'); // Throw an error for non-OK responses
+      }
+      const result = await response.text();
+      document.getElementById('popup').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('popup').style.display = 'none';
+      }, 3000); // Hide popup after 3 seconds
+    } catch (error) {
+      console.error(error);
+      // Handle error (e.g., display an error message to the user)
+    }
   });
-  const result = await response.text();
-  document.getElementById('popup').style.display = 'block';
-  setTimeout(() => {
-    document.getElementById('popup').style.display = 'none';
-  }, 3000); // Hide popup after 3 seconds
-});
+}); --}}
+
     </script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      offset: 120
+    });
+  </script>
+  <script src="/src/livechat.js"></script>
+  <script>
+     document.addEventListener("DOMContentLoaded", function() {
+        const loginLink = document.getElementById("login");
+        const logoutLink = document.getElementById("logout");
+        
+        loginLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            loginLink.style.display = "none";
+            logoutLink.style.display = "block";
+        });
+
+        logoutLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            logoutLink.style.display = "none";
+            loginLink.style.display = "block";
+        });
+    });
+</script>
+  </script>
 </body>
 </html>
